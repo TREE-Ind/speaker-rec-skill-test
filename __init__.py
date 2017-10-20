@@ -45,11 +45,8 @@ LOGGER = getLogger(__name__)
 class SpeakerRecSkillTest(MycroftSkill):
     def __init__(self):
         super(SpeakerRecSkillTest, self).__init__(name="SpeakerRecSkillTest")
-        
-        self.known_speakers = []
-        directory = "/tmp/mycroft_wake_words"
-        self.newest = max(glob.iglob(os.path.join(directory, '*.wav')), key=os.path.getctime)
 
+        self.known_speakers = []
 
     def initialize(self):
         speaker_rec_greeting_intent = IntentBuilder("SpeakerRecGreetingIntent"). \
